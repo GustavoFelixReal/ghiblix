@@ -1,4 +1,6 @@
 import { useFavorites } from "../hooks/useFavorites";
+
+/* Components */
 import { Container } from "../styles/home";
 
 export default function Home() {

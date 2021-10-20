@@ -1,7 +1,9 @@
+import { HeaderContainer } from "./styled";
+
 export default function Header() {
   return (
-    <header>
+    <HeaderContainer>
       cabeçalho
-    </header>
+    </HeaderContainer>
   )
 }
