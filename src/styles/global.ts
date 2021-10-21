@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeProps } from "../providers/theme";
+interface GlobalStylesProps {
+  theme: ThemeProps;
+}
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   * {
     margin: 0;
     padding: 0;
@@ -17,7 +21,17 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  body { 
+    background-color: ${(props) => props.theme.complementaryBackground};
+    left: 78px;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: calc(100% - 78px);
+  }
+
   body, input, textarea, button {
+    color: ${(props) => props.theme.text};
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
   }

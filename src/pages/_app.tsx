@@ -8,19 +8,29 @@ import { Main } from '../styles/main';
 
 /* Styles */
 import { GlobalStyles } from '../styles/global';
+import { theme } from '../providers/theme';
+import { ThemeProvider } from 'styled-components';
 
 function Application({ Component, pageProps }: AppProps) {
-  return (
-    <FavoritesProvider>
-      <Header />
+  let selectedTheme = 'light';
 
-      <Main>
-        <Component {...pageProps} />
-      </Main>
-      
-      <Footer />
-      <GlobalStyles />
-    </FavoritesProvider>
+  if (typeof window !== 'undefined') {
+    selectedTheme = localStorage?.getItem('theme') || 'light';
+  }
+
+  return (
+    <ThemeProvider theme={theme[selectedTheme]}>
+      <FavoritesProvider>
+        <Header />
+
+        <Main>
+          <Component {...pageProps} />
+        </Main>
+
+        <Footer />
+        <GlobalStyles />
+      </FavoritesProvider>
+    </ThemeProvider>
   );
 }
 

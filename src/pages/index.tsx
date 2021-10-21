@@ -8,8 +8,6 @@ export default function Home() {
 
   const { favorites } = useFavorites();
 
-  console.log(favorites);
-
   return (
     <Container>
       <h1>Hello World</h1>

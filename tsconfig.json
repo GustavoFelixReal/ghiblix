@@ -22,6 +22,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/helpers/hex-to-rgb.js", "src/helpers/hex-to-rgb.js"  ],
   "exclude": ["node_modules", "**/__tests__/*"]
 }
