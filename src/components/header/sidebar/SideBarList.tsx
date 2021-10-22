@@ -1,18 +1,19 @@
 import { mdiHome, mdiHomeOutline, mdiStar, mdiStarOutline } from "@mdi/js";
+
+import NavItem from "../NavItem";
 import { SideBarListContainer } from "../styled";
-import ListItem from "./ListItem";
 
 export default function SideBarList() {
   return (
     <SideBarListContainer>
-      <ListItem 
+      <NavItem 
         label="Início"
         size={1}
         path="/"
         fullIcon={mdiHome}
         outlineIcon={mdiHomeOutline}
       />
-      <ListItem 
+      <NavItem 
         label="Favoritos"
         size={1}
         path="/favorites"

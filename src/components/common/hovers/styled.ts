@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { ThemeProps } from "../../../providers/theme";
+import { Theme } from "../../../types/theme";
 
 interface StylesProps {
-  theme: ThemeProps;
+  theme: Theme;
 }
 
 export const TooltipContainer = styled.span<StylesProps>`

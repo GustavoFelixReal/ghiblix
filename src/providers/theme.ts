@@ -1,16 +1,11 @@
-export interface ThemeProps {
-  mainBackground: string,
-  complementaryBackground: string,
-  text: string,
-  primary: string,
-  secondary: string,
-  success: string,
-  warning: string,
-  danger: string,
-  info: string,
-};
+import { Theme } from "../types/theme";
 
-export const theme = {
+type ThemeProps = {
+  light: Theme;
+  dark: Theme;
+}
+
+export const theme: ThemeProps = {
   light: {
     mainBackground: '#ffffff',
     complementaryBackground: '#f0f2f5',

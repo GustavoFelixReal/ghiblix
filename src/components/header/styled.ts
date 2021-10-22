@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { hexToRgb } from "../../helpers/hex-to-rgb";
-import { ThemeProps } from "../../providers/theme";
+import { Theme } from "../../types/theme";
 
 interface StylesProps {
-  theme: ThemeProps;
+  theme: Theme;
 }
 
 export const HeaderContainer = styled.header<StylesProps>`
@@ -15,6 +15,7 @@ export const HeaderContainer = styled.header<StylesProps>`
 export const SideBarContainer = styled.div<StylesProps>`
   background-color: ${(props) => props.theme.mainBackground};
   box-shadow: 0 3px 10px -4px rgba(51,62,73,.18), 0 6px 17px 2px rgba(51,62,73,.08);
+  display: none;
   height: 100%;
   left: 0;
   padding: 6px 14px;
@@ -22,6 +23,10 @@ export const SideBarContainer = styled.div<StylesProps>`
   top: 0;
   transition: all 0.5s ease-out;
   width: 78px;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 
   button {
     left: 50%;
@@ -61,15 +66,9 @@ export const SideBarContainer = styled.div<StylesProps>`
 
 export const SideBarListContainer = styled.ul`
   margin-top: 20px;
-
 `;
 
-interface StyledListItem extends StylesProps {
-  isActive: boolean;
-}
-
-
-export const StyledListItem = styled.li<StyledListItem>`
+export const StyledNavItem = styled.li<StylesProps>`
   list-style: none;
   margin: 8px 0;
   position: relative;
@@ -79,7 +78,7 @@ export const StyledListItem = styled.li<StyledListItem>`
     background-color: ${(props) => props.theme.complementaryBackground};
     border: none;
     border-radius: 5px;
-    color: ${(props) => props.isActive ? props.theme.primary : props.theme.text};
+    color: ${(props) => props.theme.text};
     display: flex;
     font-size: 1rem;
     font-weight: 400;
@@ -91,7 +90,15 @@ export const StyledListItem = styled.li<StyledListItem>`
     vertical-align: middle;
 
     &:hover {
-      box-shadow: 0 0 0 3px ${(props) => hexToRgb(props.isActive ? props.theme.primary : props.theme.text, '100%')};
+      box-shadow: 0 0 0 3px ${(props) => hexToRgb(props.theme.text, '100%')};
+    }
+
+    &.active {
+      color: ${(props) => props.theme.primary};
+
+      &:hover {
+        box-shadow: 0 0 0 3px ${(props) => hexToRgb(props.theme.primary, '100%')};
+      }
     }
 
     span {
@@ -124,10 +131,4 @@ export const StyledLogo = styled.svg<StylesProps>`
   
   height: 50px;
   max-width: 95px;
-  size: 10px;
-
-  path, polyline {
-    font-size: 1rem !important;
-  }
-  
 `;

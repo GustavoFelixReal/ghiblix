@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { hexToRgb } from "../../../helpers/hex-to-rgb";
-import { ThemeProps } from "../../../providers/theme";
+import { Theme } from "../../../types/theme";
 
 interface StylesProps {
-  theme: ThemeProps;
+  theme: Theme;
 }
 
 interface ButtonProps extends StylesProps {

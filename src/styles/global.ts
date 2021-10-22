@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeProps } from "../providers/theme";
+import { Theme } from "../types/theme";
 interface GlobalStylesProps {
-  theme: ThemeProps;
+  theme: Theme;
 }
 
 export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
@@ -23,21 +23,24 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
   body { 
     background-color: ${(props) => props.theme.complementaryBackground};
-    left: 78px;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
-    width: calc(100% - 78px);
+    
+    @media (min-width: 768px) {
+      left: 78px;
+      width: calc(100% - 78px);
+    }
   }
 
   body, input, textarea, button {
     color: ${(props) => props.theme.text};
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
   }
 
@@ -48,5 +51,9 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  .container {
+    padding: 1.5rem;
   }
 `;
