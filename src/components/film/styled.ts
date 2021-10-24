@@ -128,12 +128,10 @@ export const StyledFilmPeopleListItem = styled.div`
       }
     }
   }
-
-
 `;
 
 export const FilmListContainer = styled.section`
-  height: 100vh;
+  height: fit-content;
   overflow-x: hidden;
   scroll-behavior: smooth;
   white-space: nowrap;
@@ -141,6 +139,21 @@ export const FilmListContainer = styled.section`
 
   @media screen and (max-width: 1280px) {
     overflow-x: auto;
+  }
+
+  .no-film-message {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+
+    button {
+      margin-top: 10px;
+      width: fit-content;
+    }
   }
 `;
 
