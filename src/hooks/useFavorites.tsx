@@ -20,7 +20,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
   useEffect(() => {
     const newFavorites = localStorage.getItem('favorites');
 
-    setFavorites(JSON.parse(newFavorites));
+    setFavorites(JSON.parse(newFavorites) || []);
   }, []);
 
   async function createFavorite(favorite: Film) {
