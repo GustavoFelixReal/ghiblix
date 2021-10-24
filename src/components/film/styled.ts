@@ -233,7 +233,7 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
         }
 
         @media screen and (max-width: 1570px) {
-          -webkit-line-clamp: 6;
+          -webkit-line-clamp: 5;
           -webkit-box-orient: vertical;
         }
       }
