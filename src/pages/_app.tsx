@@ -10,7 +10,6 @@ import { Main } from '../styles/main';
 import { GlobalStyles } from '../styles/global';
 import { theme } from '../providers/theme';
 import { ThemeProvider } from 'styled-components';
-import 'react-toastify/dist/ReactToastify.css';
 
 function Application({ Component, pageProps }: AppProps) {
   let selectedTheme = 'dark';
