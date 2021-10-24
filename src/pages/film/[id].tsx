@@ -1,15 +1,30 @@
+import axios from "axios";
+import Head from 'next/head';
+import FilmDetails from "../../components/film/FilmDetails";
+import FilmPeopleList from "../../components/film/FilmPeopleList";
 import { api } from "../../services/api";
-import { Film } from "../../types/film";
+import { FilmContainer } from "../../styles/pages";
+import { Film, Person } from "../../types/film";
 
-interface FilmDetailsProps {
+interface FilmProps {
   film: Film;
+  people: Person[];
 }
 
-export default function FilmDetails({ film }: FilmDetailsProps) {
-  console.log(film);
+export default function FilmProperties({ film, people }: FilmProps) {
+  console.log(film, people);
   
   return (
-    ''
+    <FilmContainer banner={film.movie_banner}>
+      <Head>
+        <title>{film.title}</title>
+      </Head>
+      <FilmDetails film={film} />
+
+      <FilmPeopleList people={people} />
+
+      <div className="film-banner" />
+    </FilmContainer>
   );
 }
 
@@ -34,14 +49,26 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { id } }) => {
   let film;
+  const people = [];
 
   await api.get(`films/${id}`).then(res => {
     film = res.data;
   });
 
+  const peopleRequests = film.people.map((person) => {
+    return axios.get(person);
+  });
+
+  await axios.all(peopleRequests).then(allRes => {
+    allRes.forEach(res => {
+      people.push((res as any).data);
+    });
+  });
+  
   return {
     props: { 
-      film
+      film,
+      people,
     }
   }
 };

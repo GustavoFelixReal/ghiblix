@@ -17,3 +17,15 @@ export interface Film {
   vehicles: string[];
   url: string;
 };
+
+export interface Person {
+  age: string;
+  eye_color: string;
+  films: string[];
+  gender: string;
+  hair_color: string;
+  id: string;
+  name: string;
+  species: string;
+  url: string;
+};

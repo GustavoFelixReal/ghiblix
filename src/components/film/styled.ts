@@ -1,6 +1,90 @@
 import styled from "styled-components";
 import { Styles } from "../../types/styles";
 
+export const FilmDetailsContainer = styled.section<Styles>`
+  background-color: ${(props) => props.theme.mainBackground};
+  box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s;
+  white-space: normal;
+  width: calc(90% - 40px);
+
+  @media screen and (max-width: 768px) {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .film-info {
+	  background-blend-mode: multiply;
+    border-radius: 10px;
+    height: 100%; 
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    .film-header {
+      align-items: top;
+      display: flex;
+      padding: 25px;
+      position: relative;
+
+      @media screen and (max-width: 1250px) {
+        display: block;
+      }
+
+      .film-description {
+        width: calc(75% - 20px);
+        display: inline-block;
+
+        @media screen and (max-width: 1250px) {
+          display: block;
+          width: 100%;
+        }
+
+        p {
+          font-size: 95%;
+        }
+
+        h2, h3 {
+          @media screen and (max-width: 1250px) {
+            font-size: 90%;
+            width: 100%;
+          }
+        }
+
+        .film-action-buttons {
+          margin-top: 20px;
+        }
+      }
+
+      img {
+        border-radius: 5px; 
+        box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+        display: inline-block;
+        width: 30%;
+        position: relative;
+        margin-right: 20px;
+        
+        @media screen and (max-width: 1250px) {
+          display: block; 
+          float: none;
+          width: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+`;
+
+export const FilmPeopleListContainer = styled.section`
+
+`;
+
 export const FilmListContainer = styled.section`
   height: 100vh;
   overflow-x: hidden;
@@ -149,7 +233,8 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
     background-size: cover !important;
     border-radius: 11px;
     filter: blur(4px) !important;
-    height: 100%; position: absolute;
+    height: 100%; 
+    position: absolute;
     right: 0;
     top: 0;
     z-index: 1;

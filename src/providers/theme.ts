@@ -20,7 +20,7 @@ const colorVariants = {
   },
   warning: { 
     background: '#eba417',
-    text: '#000000'
+    text: '#ffffff'
   },
   danger: { 
     background: '#dc3545',
