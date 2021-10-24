@@ -23,6 +23,7 @@ export const SideBarContainer = styled.div<StylesProps>`
   top: 0;
   transition: all 0.5s ease-out;
   width: 78px;
+  z-index: 3;
 
   @media (min-width: 768px) {
     display: block;

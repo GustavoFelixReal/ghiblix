@@ -19,7 +19,7 @@ export default function Home({ films }: HomeProps) {
   console.log(films);
 
   return (
-    <HomeContainer className="container">
+    <HomeContainer>
       <h1>Filmes</h1>
 
       <FilmList films={films} />

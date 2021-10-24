@@ -42,6 +42,10 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   h1, h2, h3, h4, h5, h6, strong {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+
+    @media screen and (max-width: 768px) {
+      font-size: 95%;
+    }
   }
 
   button { 
