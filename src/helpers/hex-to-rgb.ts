@@ -5,7 +5,7 @@ export function hexToRgb(hex: string, opacity = '100%') {
       Number(`0x${hex[3]}${hex[4]}`) | 0,
       Number(`0x${hex[5]}${hex[6]}`) | 0,
     ];
-    
-    return `rgba(${rgb.join(",")}, ${opacity})`;
+
+    return `rgba(${rgb.join(',')}, ${opacity})`;
   }
 }

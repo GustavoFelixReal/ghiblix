@@ -7,7 +7,6 @@ import FilmListItem from './FilmListItem';
 import FilmListScrollButtons from './FilmListScrollButtons';
 import Button from '../common/buttons/Button';
 
-
 interface FilmListProps {
   films: Film[];
 }
@@ -29,11 +28,11 @@ export default function FilmList({ films }: FilmListProps) {
         <div className="no-film-message">
           <h1>Não há filme para exibir aqui! 😥</h1>
           <h3>Volte mais tarde! 😉</h3>
-          {router.asPath !== '/' && 
+          {router.asPath !== '/' && (
             <Button variant="primary" onClick={() => router.push('/')}>
               Início
-            </Button> 
-          }
+            </Button>
+          )}
         </div>
       )}
     </FilmListContainer>

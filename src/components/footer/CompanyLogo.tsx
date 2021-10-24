@@ -1,8 +1,8 @@
-import { StyledCompanyLogo } from "./styled";
+import { StyledCompanyLogo } from './styled';
 
 export default function CompanyLogo() {
   return (
-    <StyledCompanyLogo  viewBox="0 0 787.4 354.28">
+    <StyledCompanyLogo viewBox="0 0 787.4 354.28">
       <g>
         <polyline points="148.09 216.3 148.09 215.78 147.57 215.78 144.78 215.25 148.09 216.3" />
         <path

@@ -1,5 +1,5 @@
-import { ReactChild, ReactChildren, ReactNode } from "react";
-import { ButtonGroupContainer } from "./styled";
+import { ReactChild, ReactChildren, ReactNode } from 'react';
+import { ButtonGroupContainer } from './styled';
 
 interface ButtonGroupProps {
   children: ReactNode | ReactChild | ReactChildren;
@@ -7,9 +7,5 @@ interface ButtonGroupProps {
 }
 
 export default function ButtonGroup({ children, ...rest }: ButtonGroupProps) {
-  return (
-    <ButtonGroupContainer {...rest}>
-      {children}
-    </ButtonGroupContainer>
-  )
+  return <ButtonGroupContainer {...rest}>{children}</ButtonGroupContainer>;
 }

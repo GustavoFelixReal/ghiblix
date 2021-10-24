@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   padding: 1.5rem;
   width: 100%;
-  
+
   @media (max-width: 768px) {
     align-items: center;
     display: flex;

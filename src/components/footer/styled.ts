@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Styles } from "../../types/styles";
+import styled from 'styled-components';
+import { Styles } from '../../types/styles';
 
 export const FooterContainer = styled.footer<Styles>`
   align-items: center;

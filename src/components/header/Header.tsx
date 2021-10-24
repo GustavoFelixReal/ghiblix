@@ -19,10 +19,10 @@ export default function Header() {
 
       <nav>
         <Button onClick={() => router.push('/')}>
-          <Icon path={mdiHome} size={1}/>
+          <Icon path={mdiHome} size={1} />
         </Button>
         <Button onClick={() => router.push('/favorites')}>
-          <Icon path={mdiStar} size={1}/>
+          <Icon path={mdiStar} size={1} />
         </Button>
       </nav>
     </HeaderContainer>

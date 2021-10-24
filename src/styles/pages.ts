@@ -32,8 +32,8 @@ export const FilmContainer = styled.div<FilmContainerProps>`
     //background-size: cover !important;
     border-radius: 11px;
     filter: blur(4px) !important;
-    height: 100%; 
-    width: 100%; 
+    height: 100%;
+    width: 100%;
     position: absolute;
     right: 0;
     top: 0;

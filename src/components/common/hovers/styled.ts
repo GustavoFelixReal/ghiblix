@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { Styles } from "../../../types/styles";
+import styled from 'styled-components';
+import { Styles } from '../../../types/styles';
 
 export const TooltipContainer = styled.span<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   border: 1px solid ${(props) => props.theme.complementaryBackground};
   border-radius: 10px;
-  box-shadow: 0 3px 10px -4px rgba(51,62,73,.18), 0 6px 17px 2px rgba(51,62,73,.08);
+  box-shadow: 0 3px 10px -4px rgba(51, 62, 73, 0.18), 0 6px 17px 2px rgba(51, 62, 73, 0.08);
   color: ${(props) => props.theme.text};
   left: calc(100% - 25px);
   opacity: 0;
@@ -17,7 +17,6 @@ export const TooltipContainer = styled.span<Styles>`
   transition: 0s;
   transform: translateY(-50%);
   white-space: nowrap;
-  width: fit-content; 
+  width: fit-content;
   z-index: 3;
- 
 `;

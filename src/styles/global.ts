@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { Styles } from "../types/styles";
+import { createGlobalStyle } from 'styled-components';
+import { Styles } from '../types/styles';
 
 export const GlobalStyles = createGlobalStyle<Styles>`
   * {

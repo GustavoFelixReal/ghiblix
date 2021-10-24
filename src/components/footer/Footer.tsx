@@ -1,5 +1,5 @@
-import CompanyLogo from "./CompanyLogo";
-import { FooterContainer } from "./styled";
+import CompanyLogo from './CompanyLogo';
+import { FooterContainer } from './styled';
 
 export default function Footer() {
   return (

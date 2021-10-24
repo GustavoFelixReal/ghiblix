@@ -1,11 +1,11 @@
-import { Film } from "../../types/film";
+import { Film } from '../../types/film';
 
-import ButtonGroup from "../common/buttons/ButtonGroup";
-import FavoriteFilmButton from "./FavoriteFilmButton";
-import { FilmDetailsContainer } from "./styled";
+import ButtonGroup from '../common/buttons/ButtonGroup';
+import FavoriteFilmButton from './FavoriteFilmButton';
+import { FilmDetailsContainer } from './styled';
 
 interface FilmDetailsProps {
-  film: Film; 
+  film: Film;
 }
 
 export default function FilmDetails({ film }: FilmDetailsProps) {
@@ -16,7 +16,9 @@ export default function FilmDetails({ film }: FilmDetailsProps) {
           <img src={film.image} alt={`Capa do filme "${film.title}"`} />
           <div className="film-description">
             <h2>{film.title}</h2>
-            <h3>{film.original_title} ({film.original_title_romanised})</h3>
+            <h3>
+              {film.original_title} ({film.original_title_romanised})
+            </h3>
 
             <small>Ano de Lançamento:</small>
             <h3>📅 {film.release_date}</h3>
@@ -37,7 +39,6 @@ export default function FilmDetails({ film }: FilmDetailsProps) {
               <FavoriteFilmButton film={film} />
             </ButtonGroup>
           </div>
-          
         </div>
       </div>
     </FilmDetailsContainer>

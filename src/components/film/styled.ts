@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { Styles } from "../../types/styles";
+import styled from 'styled-components';
+import { Styles } from '../../types/styles';
 
 export const FilmDetailsContainer = styled.section<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
-  box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: block;
   margin: 20px auto;
@@ -19,9 +19,9 @@ export const FilmDetailsContainer = styled.section<Styles>`
   }
 
   .film-info {
-	  background-blend-mode: multiply;
+    background-blend-mode: multiply;
     border-radius: 10px;
-    height: 100%; 
+    height: 100%;
     position: relative;
     width: 100%;
     z-index: 2;
@@ -49,7 +49,8 @@ export const FilmDetailsContainer = styled.section<Styles>`
           font-size: 95%;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
           @media screen and (max-width: 1250px) {
             font-size: 90%;
             width: 100%;
@@ -62,15 +63,15 @@ export const FilmDetailsContainer = styled.section<Styles>`
       }
 
       img {
-        border-radius: 5px; 
-        box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+        border-radius: 5px;
+        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
         display: inline-block;
         width: 30%;
         position: relative;
         margin-right: 20px;
-        
+
         @media screen and (max-width: 1250px) {
-          display: block; 
+          display: block;
           float: none;
           width: 30%;
           margin-left: auto;
@@ -93,7 +94,7 @@ export const FilmPeopleListContainer = styled.section`
 
 export const StyledFilmPeopleListItem = styled.div`
   background-color: ${(props) => props.theme.complementaryBackground};
-  box-shadow: 0px 0px 50px 5px rgba(0,0,0, 0.5);
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin: 20px auto;
   overflow: hidden;
@@ -112,20 +113,18 @@ export const StyledFilmPeopleListItem = styled.div`
     width: calc(100% - 20px);
   }
 
-
   &:hover {
-    box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
+    box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
     transform: scale(1.02);
     transition: all 0.4s ease;
     filter: brightness(0.5);
   }
-  
+
   .person-info {
     padding: 1.5rem;
     width: 100%;
 
     .person-header {
-      
       svg {
         width: 10%;
       }
@@ -177,7 +176,7 @@ interface StyledFilmListItemProps extends Styles {
 }
 
 export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
-  box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: inline-block;
   height: 500px;
@@ -189,7 +188,7 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
   width: calc(50% - 40px);
 
   &:hover {
-    box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
+    box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
     transform: scale(1.02);
     transition: all 0.4s ease;
   }
@@ -200,14 +199,14 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
   }
 
   .film-info {
-	  background-blend-mode: multiply;
-    border-radius: 10px; 
-    height: 100%; 
+    background-blend-mode: multiply;
+    border-radius: 10px;
+    height: 100%;
     position: relative;
     width: 100%;
     z-index: 2;
 
-    .film-header { 
+    .film-header {
       height: 100%;
       padding: 25px;
       position: relative;
@@ -240,8 +239,8 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
         font-size: 95%;
 
         overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
+        text-overflow: ellipsis;
+        display: -webkit-box;
 
         @media screen and (min-width: 1570px) {
           -webkit-line-clamp: 15;
@@ -254,7 +253,8 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
         }
       }
 
-      h2, h3 {
+      h2,
+      h3 {
         @media screen and (max-width: 1250px) {
           font-size: 90%;
           width: 100%;
@@ -262,15 +262,15 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
       }
 
       img {
-        border-radius: 5px; 
-        box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+        border-radius: 5px;
+        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
         float: left;
         height: 100%;
         position: relative;
         margin-right: 20px;
-        
+
         @media screen and (max-width: 1250px) {
-          display: block; 
+          display: block;
           float: none;
           height: 45%;
           margin-left: auto;
@@ -296,19 +296,19 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
     background-size: cover !important;
     border-radius: 11px;
     filter: blur(4px) !important;
-    height: 100%; 
+    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
     z-index: 1;
 
     @media screen and (min-width: 1250px) {
-      background-position: -100% 10% !important;  
+      background-position: -100% 10% !important;
       width: 100%;
     }
 
     @media screen and (max-width: 1250px) {
-      background-position: 100% 100% !important;  
+      background-position: 100% 100% !important;
       width: 100%;
     }
   }

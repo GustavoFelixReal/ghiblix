@@ -3,13 +3,13 @@ import { Film } from '../types/film';
 
 interface FavoritesProviderProps {
   children: ReactNode;
-};
+}
 
 interface FavoritesContextData {
   favorites: Film[];
   createFavorite: (favorite: Film) => Promise<void>;
   destroyFavorite: (favorite: Film) => Promise<void>;
-};
+}
 
 export const FavoritesContext = createContext<FavoritesContextData>({} as FavoritesContextData);
 
@@ -24,14 +24,11 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
 
   async function createFavorite(favorite: Film) {
     try {
-      const newFavorites = [
-        ...favorites,
-        favorite
-      ];
+      const newFavorites = [...favorites, favorite];
 
       setFavorites([...newFavorites]);
 
-      localStorage.setItem('favorites', JSON.stringify(newFavorites)); 
+      localStorage.setItem('favorites', JSON.stringify(newFavorites));
     } catch {
       console.error(`houve um erro ao adicionar "${favorite.title}" aos favoritos.`);
     }
@@ -40,7 +37,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
   async function destroyFavorite(favorite: Film) {
     try {
       const newFavorites = favorites;
-      const index = newFavorites.findIndex(currentFavorite => currentFavorite.id === favorite.id);
+      const index = newFavorites.findIndex((currentFavorite) => currentFavorite.id === favorite.id);
       newFavorites.splice(index, 1);
 
       setFavorites([...newFavorites]);

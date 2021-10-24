@@ -16,7 +16,7 @@ export interface Film {
   locations: string[];
   vehicles: string[];
   url: string;
-};
+}
 
 export interface Person {
   age: string;
@@ -28,4 +28,4 @@ export interface Person {
   name: string;
   species: string;
   url: string;
-};
+}

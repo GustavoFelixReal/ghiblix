@@ -1,18 +1,16 @@
-import Head from "next/head";
-import { Film } from "../types/film";
+import Head from 'next/head';
+import { Film } from '../types/film';
 
-import { api } from "../services/api";
+import { api } from '../services/api';
 
-import FilmList from "../components/film/FilmList";
-import { HomeContainer } from "../styles/pages";
-
+import FilmList from '../components/film/FilmList';
+import { HomeContainer } from '../styles/pages';
 
 interface HomeProps {
-  films: Film[]
+  films: Film[];
 }
 
 export default function Home({ films }: HomeProps) {
-
   return (
     <HomeContainer>
       <Head>
@@ -29,16 +27,19 @@ export default function Home({ films }: HomeProps) {
 
 export const getStaticProps = async () => {
   let films;
-  
-  await api.get('films').then(res => {
-    films = res.data;
-  }).then(error => {
-    console.error(error);
-  });
+
+  await api
+    .get('films')
+    .then((res) => {
+      films = res.data;
+    })
+    .then((error) => {
+      console.error(error);
+    });
 
   return {
     props: {
-      films
-    }
-  }
-}
+      films,
+    },
+  };
+};
