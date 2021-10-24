@@ -83,15 +83,17 @@ export const FilmDetailsContainer = styled.section<Styles>`
 `;
 
 export const FilmPeopleListContainer = styled.section`
+  background: linear-gradient(to top, ${(props) => props.theme.mainBackground} 40%, transparent 100%);
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   margin: 0 auto;
+  padding-top: 1.5rem;
+  width: 100%;
 `;
 
 export const StyledFilmPeopleListItem = styled.div`
-  background-color: ${(props) => props.theme.mainBackground};
-  box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+  background-color: ${(props) => props.theme.complementaryBackground};
+  box-shadow: 0px 0px 50px 5px rgba(0,0,0, 0.5);
   border-radius: 10px;
   margin: 20px auto;
   overflow: hidden;
@@ -115,6 +117,7 @@ export const StyledFilmPeopleListItem = styled.div`
     box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
     transform: scale(1.02);
     transition: all 0.4s ease;
+    filter: brightness(0.5);
   }
   
   .person-info {

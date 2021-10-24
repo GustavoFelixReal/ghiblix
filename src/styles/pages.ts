@@ -27,9 +27,9 @@ export const FilmContainer = styled.div<FilmContainerProps>`
 
   .film-banner {
     background: url(${(props) => props.banner});
-    background-position: center !important;
+    background-position: top !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important;
+    //background-size: cover !important;
     border-radius: 11px;
     filter: blur(4px) !important;
     height: 100%; 
