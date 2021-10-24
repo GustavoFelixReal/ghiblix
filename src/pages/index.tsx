@@ -1,27 +1,27 @@
-import { useEffect } from "react";
-import FilmList from "../components/film/FilmList";
-import { useFavorites } from "../hooks/useFavorites";
+import Head from "next/head";
+import { Film } from "../types/film";
+
 import { api } from "../services/api";
+
+import FilmList from "../components/film/FilmList";
+import { HomeContainer } from "../styles/pages";
+
 
 interface HomeProps {
   films: Film[]
 }
 
-/* Components */
-import { HomeContainer } from "../styles/pages";
-import { Film } from "../types/film";
-
 export default function Home({ films }: HomeProps) {
-  const { t } = { t: 'abacaxi' };
-
-  const { favorites } = useFavorites();
-
-  console.log(films);
 
   return (
     <HomeContainer>
-      <h1>Filmes</h1>
-
+      <Head>
+        <title>Filmes</title>
+      </Head>
+      <div className="title">
+        <h1>Filmes</h1>
+        <p>Veja todas as nossas criações!!</p>
+      </div>
       <FilmList films={films} />
     </HomeContainer>
   );

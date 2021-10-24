@@ -40,7 +40,7 @@ export default function FilmListItem({ film }: FilmListItemProps) {
       <div className="film-info">
         <div className="film-header">
           <img src={film.image} alt={`Capa do filme "${film.title}"`} />
-          <h2>{film.title}</h2>
+          <h2>{film.title} ({film.release_date})</h2>
           <h3>{film.director}</h3>
           <p>{film.description}</p>
           <ButtonGroup className="film-action-buttons">

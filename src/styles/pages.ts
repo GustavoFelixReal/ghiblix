@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
-  h1 {
+  .title {
     padding: 1.5rem;
   }
 `;
 
 export const FavoritesContainer = styled.div`
-  h1 {
+  .title {
     padding: 1.5rem;
   }
 `;
