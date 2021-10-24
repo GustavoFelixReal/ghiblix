@@ -78,6 +78,14 @@ export const FilmDetailsContainer = styled.section<Styles>`
           margin-right: auto;
           margin-bottom: 10px;
         }
+
+        @media screen and (max-width: 768px) {
+          width: 50%;
+        }
+
+        @media screen and (max-width: 425px) {
+          width: 100%;
+        }
       }
     }
   }
