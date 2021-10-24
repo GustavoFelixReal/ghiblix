@@ -91,10 +91,10 @@ export const StyledNavItem = styled.li<Styles>`
     }
 
     &.active {
-      color: ${(props) => props.theme.primary};
+      color: ${(props) => props.theme.primary.background};
 
       &:hover {
-        box-shadow: 0 0 0 3px ${(props) => hexToRgb(props.theme.primary, '100%')};
+        box-shadow: 0 0 0 3px ${(props) => hexToRgb(props.theme.primary.background, '100%')};
       }
     }
 

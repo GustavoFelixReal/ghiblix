@@ -14,6 +14,5 @@ export default function Button({ children, ...rest }: ButtonProps) {
     <StyledButton {...rest}>
       {children}
     </StyledButton>
-  )
-
+  );
 }

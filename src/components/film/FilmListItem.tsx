@@ -44,14 +44,15 @@ export default function FilmListItem({ film }: FilmListItemProps) {
           <h3>{film.director}</h3>
           <p>{film.description}</p>
           <ButtonGroup className="film-action-buttons">
-            <Button onClick={handleToggleFavorite}>
+            <Button variant="warning" onClick={handleToggleFavorite}>
               <Icon path={isFavorite ? mdiStar : mdiStarOutline} size={1} />
             </Button>
             <Button 
+              variant="primary"
               onClick={() => router.push(`/film/${film.id}`)} 
               className="see-details-button"
             >
-              Ver detalhes
+              Ver Detalhes
             </Button>
           </ButtonGroup>
         </div>

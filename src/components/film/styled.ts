@@ -16,9 +16,12 @@ export const FilmListContainer = styled.section`
 export const StyledFilmListScrollButtons = styled.div`
   left: 0;
   position: sticky;
+  padding-left: 20px;
 
   button {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0.25rem;
   }
 `;
 

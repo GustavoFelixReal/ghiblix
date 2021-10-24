@@ -5,28 +5,45 @@ type ThemeProps = {
   dark: Theme;
 }
 
+const colorVariants = {
+  primary: { 
+    background: '#1565d6',
+    text: '#ffffff'
+  },
+  secondary: { 
+    background: '#f0f2f5',
+    text: '#000000'
+  },
+  success: { 
+    background: '#28a745',
+    text: '#ffffff'
+  },
+  warning: { 
+    background: '#eba417',
+    text: '#000000'
+  },
+  danger: { 
+    background: '#dc3545',
+    text: '#ffffff'
+  },
+  info: { 
+    background: '#04a9f5',
+    text: '#ffffff'
+  },
+};
+
 export const theme: ThemeProps = {
   light: {
     mainBackground: '#ffffff',
     complementaryBackground: '#f0f2f5',
     text: '#000000',
-    primary: '#1565d6',
-    secondary: 'secondary',
-    success: 'success',
-    warning: 'warning',
-    danger: 'danger',
-    info: 'info',
+    ...colorVariants
   },
   dark: {
     mainBackground: '#18191a',
     complementaryBackground: '#242526',
     text: '#ffffff',
-    primary: '#1565d6',
-    secondary: 'secondary',
-    success: 'success',
-    warning: 'warning',
-    danger: 'danger',
-    info: 'info',
+    ...colorVariants
   }
 };
 

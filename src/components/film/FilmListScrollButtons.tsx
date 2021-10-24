@@ -1,8 +1,10 @@
-import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
-import Icon from "@mdi/react";
 import { RefObject, useCallback } from "react";
+
+import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
+
 import Button from "../common/buttons/Button";
 import ButtonGroup from "../common/buttons/ButtonGroup";
+import Icon from "@mdi/react";
 import { StyledFilmListScrollButtons } from "./styled";
 
 interface FilmListScrollButtonsProps {
@@ -12,8 +14,6 @@ interface FilmListScrollButtonsProps {
 export default function FilmListScrollButtons({ listRef }: FilmListScrollButtonsProps) {
 
   const handleScroll = useCallback((handleScroll: 'left' | 'right') => {
-    //const filmItemSize = window.screen.width
-
     if (handleScroll === 'left') {
       listRef.current.scrollLeft -= listRef.current.offsetWidth;
       return;
@@ -24,12 +24,12 @@ export default function FilmListScrollButtons({ listRef }: FilmListScrollButtons
 
   return (
     <StyledFilmListScrollButtons>
-      <ButtonGroup >
-        <Button rounded onClick={() => handleScroll('left')}>
-          <Icon path={mdiChevronLeft} size={.6}/>
+      <ButtonGroup>
+        <Button variant="primary" rounded onClick={() => handleScroll('left')}>
+          <Icon path={mdiChevronLeft} size={.8}/>
         </Button>
-        <Button rounded onClick={() => handleScroll('right')}>
-          <Icon path={mdiChevronRight} size={.6}/>
+        <Button variant="primary" rounded onClick={() => handleScroll('right')}>
+          <Icon path={mdiChevronRight} size={.8}/>
         </Button>
       </ButtonGroup>
     </StyledFilmListScrollButtons>

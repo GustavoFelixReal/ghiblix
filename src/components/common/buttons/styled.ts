@@ -8,10 +8,10 @@ interface ButtonProps extends Styles {
 }
 
 export const StyledButton = styled.button<ButtonProps>`
-  background-color: ${(props) => props.theme[props.variant] || props.theme.complementaryBackground};
+  background-color: ${(props) => props.theme[props.variant]?.background || props.theme.complementaryBackground};
   border: none;
   border-radius: ${(props) => props.rounded ? '100%' : '.75rem'};
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme[props.variant]?.text || props.theme.text};
   display: flex;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
@@ -25,7 +25,7 @@ export const StyledButton = styled.button<ButtonProps>`
   vertical-align: middle;
 
   &:hover {
-    box-shadow: 0 0 0 5px ${(props) => hexToRgb(props.theme.text, '50%')};
+    box-shadow: 0 0 0 4px ${(props) => hexToRgb(props.theme[props.variant]?.background || props.theme.text, '50%')};
   }
 `;
 
