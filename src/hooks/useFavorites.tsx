@@ -17,13 +17,25 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
   const [favorites, setFavorites] = useState<Film[]>([]);
 
   useEffect(() => {
-    const newFavorites = localStorage.getItem('favorites');
+    try {
+      const newFavorites = localStorage.getItem('favorites');
 
-    setFavorites(JSON.parse(newFavorites) || []);
+      setFavorites(JSON.parse(newFavorites) || []);
+    } catch {
+      setFavorites([]);
+      console.error('Não foi possível carregar os favoritos!');
+    }
+    
   }, []);
 
   async function createFavorite(favorite: Film) {
     try {
+      const foundFavorite = favorites.find(currentFavorite => currentFavorite.id === favorite.id);
+
+      if (foundFavorite) {
+        throw new Error('Item já está salvo nos favoritos');
+      }
+
       const newFavorites = [...favorites, favorite];
 
       setFavorites([...newFavorites]);
@@ -38,6 +50,11 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
     try {
       const newFavorites = favorites;
       const index = newFavorites.findIndex((currentFavorite) => currentFavorite.id === favorite.id);
+
+      if (index < 0) {
+        throw new Error('Este item não pode ser retirado dos favoritos pois o mesmo não exite');
+      }
+
       newFavorites.splice(index, 1);
 
       setFavorites([...newFavorites]);

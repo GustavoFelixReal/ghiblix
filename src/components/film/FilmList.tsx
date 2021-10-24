@@ -1,11 +1,9 @@
-import { Film } from '../../types/film';
 import { useRouter } from 'next/dist/client/router';
-import { useRef } from 'react';
+import { Film } from '../../types/film';
 
+import Button from '../common/buttons/Button';
 import { FilmListContainer } from './styled';
 import FilmListItem from './FilmListItem';
-import FilmListScrollButtons from './FilmListScrollButtons';
-import Button from '../common/buttons/Button';
 
 interface FilmListProps {
   films: Film[];
@@ -13,13 +11,11 @@ interface FilmListProps {
 
 export default function FilmList({ films }: FilmListProps) {
   const router = useRouter();
-  const listRef = useRef(null);
 
   return (
-    <FilmListContainer ref={listRef}>
+    <FilmListContainer>
       {films.length > 0 ? (
         <>
-          <FilmListScrollButtons listRef={listRef} />
           {films.map((film) => (
             <FilmListItem key={film.id} film={film} />
           ))}
