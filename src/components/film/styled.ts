@@ -44,7 +44,7 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
     transition: all 0.4s ease;
   }
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 768px) {
     margin: 10px;
     width: calc(100% - 20px);
   }
@@ -67,11 +67,11 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
         margin: 20px;
         position: absolute;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1250px) {
           right: 0;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1250px) {
           left: 0;
         }
 
@@ -89,17 +89,23 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
       p {
         font-size: 95%;
 
-        @media screen and (max-width: 1360px) {
-          overflow: hidden;
+        overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
+
+        @media screen and (min-width: 1570px) {
+          -webkit-line-clamp: 15;
+          -webkit-box-orient: vertical;
+        }
+
+        @media screen and (max-width: 1570px) {
           -webkit-line-clamp: 7;
           -webkit-box-orient: vertical;
         }
       }
 
       h2, h3 {
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1250px) {
           font-size: 90%;
           width: 100%;
         }
@@ -113,7 +119,7 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
         position: relative;
         margin-right: 20px;
         
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1250px) {
           display: block; 
           float: none;
           height: 45%;
@@ -145,12 +151,12 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
     top: 0;
     z-index: 1;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1250px) {
       background-position: -100% 10% !important;  
       width: 100%;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1250px) {
       background-position: 100% 100% !important;  
       width: 100%;
     }

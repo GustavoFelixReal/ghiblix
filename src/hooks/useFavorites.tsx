@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { Film } from '../types/film';
+import { toast } from 'react-toastify';
 
 interface FavoritesProviderProps {
   children: ReactNode;
@@ -7,7 +8,8 @@ interface FavoritesProviderProps {
 
 interface FavoritesContextData {
   favorites: Film[];
-  createFavorites: (favorite: Film) => Promise<void>;
+  createFavorite: (favorite: Film) => Promise<void>;
+  destroyFavorite: (favorite: Film) => Promise<void>;
 };
 
 export const FavoritesContext = createContext<FavoritesContextData>({} as FavoritesContextData);
@@ -21,19 +23,40 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
     setFavorites(JSON.parse(newFavorites));
   }, []);
 
-  async function createFavorites(favorite: Film) {
-    const newFavorites = [
-      ...favorites,
-      favorite
-    ];
+  async function createFavorite(favorite: Film) {
+    try {
+      const newFavorites = [
+        ...favorites,
+        favorite
+      ];
 
-    setFavorites(newFavorites);
+      setFavorites([...newFavorites]);
 
-    localStorage.setItem('favorites', JSON.stringify(newFavorites));
+      localStorage.setItem('favorites', JSON.stringify(newFavorites)); 
+      
+      toast.success(`"${favorite.title}" foi adicionado aos favoritos!`);
+    } catch {
+      toast.error(`houve um erro ao adicionar "${favorite.title}" aos favoritos.`);
+    }
+  }
+
+  async function destroyFavorite(favorite: Film) {
+    try {
+      const newFavorites = favorites;
+      const index = newFavorites.findIndex(currentFavorite => currentFavorite.id === favorite.id);
+      newFavorites.splice(index, 1);
+
+      setFavorites([...newFavorites]);
+
+      localStorage.setItem('favorites', JSON.stringify(newFavorites));
+      toast.success(`"${favorite.title}" foi removido dos favoritos!`);
+    } catch {
+      toast.error(`houve um erro ao remover "${favorite.title}" dos favoritos.`);
+    }
   }
 
   return (
-    <FavoritesContext.Provider value={{ favorites, createFavorites }}>
+    <FavoritesContext.Provider value={{ favorites, createFavorite, destroyFavorite }}>
       {children}
     </FavoritesContext.Provider>
   );

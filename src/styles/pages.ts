@@ -6,4 +6,8 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const FavoritesContainer = styled.div``;
+export const FavoritesContainer = styled.div`
+  h1 {
+    padding: 1.5rem;
+  }
+`;

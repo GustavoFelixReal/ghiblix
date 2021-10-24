@@ -1,7 +1,9 @@
+import { createContext, useState } from "react";
+
 import { mdiMenu } from "@mdi/js";
-import Icon from "@mdi/react";
-import { createContext, useContext, useState } from "react";
+
 import Button from "../../common/buttons/Button";
+import Icon from "@mdi/react";
 import Logo from "../Logo";
 import { SideBarContainer } from "../styled";
 import SideBarList from "./SideBarList";

@@ -18,12 +18,7 @@ export default function FilmList({ films }: FilmListProps) {
       {films.map(film => (
         <FilmListItem 
           key={film.id}
-          id={film.id}
-          title={film.title}
-          image={film.image}
-          description={film.description}
-          director={film.director}
-          banner={film.movie_banner}
+          film={film}
         />
       ))}
     </FilmListContainer>
