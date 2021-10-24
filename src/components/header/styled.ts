@@ -1,18 +1,14 @@
 import styled from "styled-components";
 import { hexToRgb } from "../../helpers/hex-to-rgb";
-import { Theme } from "../../types/theme";
+import { Styles } from "../../types/styles"
 
-interface StylesProps {
-  theme: Theme;
-}
-
-export const HeaderContainer = styled.header<StylesProps>`
+export const HeaderContainer = styled.header<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   padding: 1.5rem;
   width: 100%;
 `;
 
-export const SideBarContainer = styled.div<StylesProps>`
+export const SideBarContainer = styled.div<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   box-shadow: 0 3px 10px -4px rgba(51,62,73,.18), 0 6px 17px 2px rgba(51,62,73,.08);
   display: none;
@@ -69,7 +65,7 @@ export const SideBarListContainer = styled.ul`
   margin-top: 20px;
 `;
 
-export const StyledNavItem = styled.li<StylesProps>`
+export const StyledNavItem = styled.li<Styles>`
   list-style: none;
   margin: 8px 0;
   position: relative;
@@ -127,7 +123,7 @@ export const StyledNavItem = styled.li<StylesProps>`
   }
 `;
 
-export const StyledLogo = styled.svg<StylesProps>`
+export const StyledLogo = styled.svg<Styles>`
   fill: ${(props) => props.theme.text} !important;
   
   height: 50px;

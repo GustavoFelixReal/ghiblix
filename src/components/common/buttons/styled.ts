@@ -1,12 +1,8 @@
 import styled from "styled-components";
 import { hexToRgb } from "../../../helpers/hex-to-rgb";
-import { Theme } from "../../../types/theme";
+import { Styles } from "../../../types/styles";
 
-interface StylesProps {
-  theme: Theme;
-}
-
-interface ButtonProps extends StylesProps {
+interface ButtonProps extends Styles {
   variant?: string;
   rounded?: boolean;
 }

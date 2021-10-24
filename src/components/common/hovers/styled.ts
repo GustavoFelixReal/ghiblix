@@ -1,11 +1,7 @@
 import styled from "styled-components";
-import { Theme } from "../../../types/theme";
+import { Styles } from "../../../types/styles";
 
-interface StylesProps {
-  theme: Theme;
-}
-
-export const TooltipContainer = styled.span<StylesProps>`
+export const TooltipContainer = styled.span<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   border: 1px solid ${(props) => props.theme.complementaryBackground};
   border-radius: 10px;
