@@ -5,7 +5,6 @@ import { FavoritesProvider } from '../hooks/useFavorites';
 import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
 import { Main } from '../styles/main';
-import { ToastContainer } from 'react-toastify';
 
 /* Styles */
 import { GlobalStyles } from '../styles/global';
@@ -23,18 +22,6 @@ function Application({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme[selectedTheme]}>
       <FavoritesProvider>
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-
         <Header />
 
         <Main>

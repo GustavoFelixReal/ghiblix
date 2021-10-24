@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { Film } from '../types/film';
-import { toast } from 'react-toastify';
 
 interface FavoritesProviderProps {
   children: ReactNode;
@@ -33,10 +32,8 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       setFavorites([...newFavorites]);
 
       localStorage.setItem('favorites', JSON.stringify(newFavorites)); 
-      
-      toast.success(`"${favorite.title}" foi adicionado aos favoritos!`);
     } catch {
-      toast.error(`houve um erro ao adicionar "${favorite.title}" aos favoritos.`);
+      console.error(`houve um erro ao adicionar "${favorite.title}" aos favoritos.`);
     }
   }
 
@@ -49,9 +46,8 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       setFavorites([...newFavorites]);
 
       localStorage.setItem('favorites', JSON.stringify(newFavorites));
-      toast.success(`"${favorite.title}" foi removido dos favoritos!`);
     } catch {
-      toast.error(`houve um erro ao remover "${favorite.title}" dos favoritos.`);
+      console.error(`houve um erro ao remover "${favorite.title}" dos favoritos.`);
     }
   }
 

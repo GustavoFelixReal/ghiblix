@@ -35,6 +35,8 @@ export const getStaticPaths = async () => {
   
   await api.get('films').then(res => {
     films = res.data;
+  }).then(error => {
+    console.error(error);
   });
 
   const paths = films.map(film => {
@@ -55,6 +57,8 @@ export const getStaticProps = async ({ params: { id } }) => {
 
   await api.get(`films/${id}`).then(res => {
     film = res.data;
+  }).then(error => {
+    console.error(error);
   });
 
   const peopleRequests = film.people.map((person) => {

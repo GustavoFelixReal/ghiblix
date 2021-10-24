@@ -32,8 +32,8 @@ export const getStaticProps = async () => {
   
   await api.get('films').then(res => {
     films = res.data;
-  }).then(err => {
-    console.error(err);
+  }).then(error => {
+    console.error(error);
   });
 
   return {
