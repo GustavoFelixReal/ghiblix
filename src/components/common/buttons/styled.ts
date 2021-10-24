@@ -10,7 +10,7 @@ interface ButtonProps extends Styles {
 export const StyledButton = styled.button<ButtonProps>`
   background-color: ${(props) => props.theme[props.variant]?.background || props.theme.complementaryBackground};
   border: none;
-  border-radius: ${(props) => props.rounded ? '100%' : '.75rem'};
+  border-radius: ${(props) => props.rounded ? '100%' : '5px'};
   color: ${(props) => props.theme[props.variant]?.text || props.theme.text};
   display: flex;
   font-family: 'Poppins', sans-serif;

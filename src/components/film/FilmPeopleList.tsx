@@ -1,4 +1,5 @@
 import { Person } from "../../types/film";
+import FilmPeopleListItem from "./FilmPeopleListItem";
 import { FilmPeopleListContainer } from "./styled";
 
 interface FilmPeopleListProps {
@@ -6,7 +7,15 @@ interface FilmPeopleListProps {
 }
 
 export default function FilmPeopleList({ people }: FilmPeopleListProps) {
+  console.log(people)
   return (
-    <FilmPeopleListContainer />
+    <FilmPeopleListContainer>
+      {people.map((person) => (
+        <FilmPeopleListItem
+          key={person.id}
+          person={person}
+        />
+      ))}
+    </FilmPeopleListContainer>
   );
 }

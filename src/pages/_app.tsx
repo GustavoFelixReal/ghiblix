@@ -14,10 +14,10 @@ import { ThemeProvider } from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Application({ Component, pageProps }: AppProps) {
-  let selectedTheme = 'light';
+  let selectedTheme = 'dark';
 
   if (typeof window !== 'undefined') {
-    selectedTheme = localStorage?.getItem('theme') || 'light';
+    selectedTheme = localStorage?.getItem('theme') || 'dark';
   }
 
   return (

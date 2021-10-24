@@ -19,8 +19,10 @@ export default function FilmProperties({ film, people }: FilmProps) {
       <Head>
         <title>{film.title}</title>
       </Head>
+      
       <FilmDetails film={film} />
 
+      <h1>Personagens</h1>
       <FilmPeopleList people={people} />
 
       <div className="film-banner" />
@@ -61,7 +63,11 @@ export const getStaticProps = async ({ params: { id } }) => {
 
   await axios.all(peopleRequests).then(allRes => {
     allRes.forEach(res => {
-      people.push((res as any).data);
+      if ((res as any).data.length > 0) {
+        (res as any).data.forEach(person => people.push(person))
+      } else {
+        people.push((res as any).data);
+      }
     });
   });
   

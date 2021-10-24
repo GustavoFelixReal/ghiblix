@@ -18,9 +18,12 @@ interface FilmContainerProps {
 
 export const FilmContainer = styled.div<FilmContainerProps>`
   align-items: center;
-  
-  display: flex;
+  display: block;
   min-height: 100vh;
+
+  h1 {
+    padding: 1.5rem;
+  }
 
   .film-banner {
     background: url(${(props) => props.banner});

@@ -5,12 +5,13 @@ export const FilmDetailsContainer = styled.section<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
   border-radius: 10px;
+  display: block;
   margin: 20px auto;
   overflow: hidden;
   position: relative;
   transition: all 0.4s;
   white-space: normal;
-  width: calc(90% - 40px);
+  width: calc(100% - 40px);
 
   @media screen and (max-width: 768px) {
     margin: 10px;
@@ -82,6 +83,52 @@ export const FilmDetailsContainer = styled.section<Styles>`
 `;
 
 export const FilmPeopleListContainer = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+`;
+
+export const StyledFilmPeopleListItem = styled.div`
+  background-color: ${(props) => props.theme.mainBackground};
+  box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s;
+  white-space: normal;
+  width: calc(25% - 40px);
+
+  @media screen and (max-width: 1024px) {
+    margin: 10px;
+    width: calc(50% - 20px);
+  }
+
+  @media screen and (max-width: 425px) {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+
+  &:hover {
+    box-shadow: 0px 0px 80px -25px rgba(0,0,0, 0.5);
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+  }
+  
+  .person-info {
+    padding: 1.5rem;
+    width: 100%;
+
+    .person-header {
+      
+      svg {
+        width: 10%;
+      }
+    }
+  }
+
 
 `;
 
@@ -186,7 +233,7 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
         }
 
         @media screen and (max-width: 1570px) {
-          -webkit-line-clamp: 7;
+          -webkit-line-clamp: 6;
           -webkit-box-orient: vertical;
         }
       }
@@ -249,4 +296,8 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
       width: 100%;
     }
   }
+`;
+
+export const StyledCharacter = styled.svg<Styles>`
+  fill: ${(props) => props.theme.primary.background} !important;
 `;
