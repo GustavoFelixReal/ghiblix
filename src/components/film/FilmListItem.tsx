@@ -23,6 +23,7 @@ export default function FilmListItem({ film }: FilmListItemProps) {
           </h2>
           <small>Dirigido por: </small>
           <h3>{film.director}</h3>
+          <small>Sinopse: </small>
           <p>{film.description}</p>
           <ButtonGroup className="film-action-buttons">
             <FavoriteFilmButton film={film} />

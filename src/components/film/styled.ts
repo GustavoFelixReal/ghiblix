@@ -239,18 +239,17 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
 
       p {
         font-size: 95%;
-
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
 
         @media screen and (min-width: 1570px) {
-          -webkit-line-clamp: 15;
+          -webkit-line-clamp: 14;
           -webkit-box-orient: vertical;
         }
 
         @media screen and (max-width: 1570px) {
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 4;
           -webkit-box-orient: vertical;
         }
       }
