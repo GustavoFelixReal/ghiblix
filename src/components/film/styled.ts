@@ -99,6 +99,12 @@ export const FilmPeopleListContainer = styled.section`
   margin: 0 auto;
   padding-top: 1.5rem;
   width: 100%;
+
+  h1 {
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    width: 100%;
+  }
 `;
 
 export const StyledFilmPeopleListItem = styled.div`

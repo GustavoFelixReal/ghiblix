@@ -22,7 +22,7 @@ export default function FilmProperties({ film, people }: FilmProps) {
 
       <FilmDetails film={film} />
 
-      <h1>Personagens</h1>
+      
       <FilmPeopleList people={people} />
 
       <div className="film-banner" />

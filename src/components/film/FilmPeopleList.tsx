@@ -9,6 +9,7 @@ interface FilmPeopleListProps {
 export default function FilmPeopleList({ people }: FilmPeopleListProps) {
   return (
     <FilmPeopleListContainer>
+      <h1>Personagens</h1>
       {people.map((person) => (
         <FilmPeopleListItem key={person.id} person={person} />
       ))}
