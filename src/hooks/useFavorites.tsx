@@ -25,12 +25,11 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       setFavorites([]);
       console.error('Não foi possível carregar os favoritos!');
     }
-    
   }, []);
 
   async function createFavorite(favorite: Film) {
     try {
-      const foundFavorite = favorites.find(currentFavorite => currentFavorite.id === favorite.id);
+      const foundFavorite = favorites.find((currentFavorite) => currentFavorite.id === favorite.id);
 
       if (foundFavorite) {
         throw new Error('Item já está salvo nos favoritos');

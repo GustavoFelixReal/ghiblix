@@ -24,3 +24,10 @@ export const StyledCompanyLogo = styled.svg`
   max-width: 500px;
   padding: 1.5rem;
 `;
+
+export const SwitchThemeButtonContainer = styled.div`
+  padding: 1.5rem;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+`;

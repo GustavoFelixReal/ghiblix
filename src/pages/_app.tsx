@@ -8,18 +8,11 @@ import { Main } from '../styles/main';
 
 /* Styles */
 import { GlobalStyles } from '../styles/global';
-import { theme } from '../providers/theme';
-import { ThemeProvider } from 'styled-components';
+import { CustomThemeProvider } from '../hooks/useCustomTheme';
 
 function Application({ Component, pageProps }: AppProps) {
-  let selectedTheme = 'dark';
-
-  if (typeof window !== 'undefined') {
-    selectedTheme = localStorage?.getItem('theme') || 'dark';
-  }
-
   return (
-    <ThemeProvider theme={theme[selectedTheme]}>
+    <CustomThemeProvider>
       <FavoritesProvider>
         <Header />
 
@@ -31,7 +24,7 @@ function Application({ Component, pageProps }: AppProps) {
 
         <GlobalStyles />
       </FavoritesProvider>
-    </ThemeProvider>
+    </CustomThemeProvider>
   );
 }
 
