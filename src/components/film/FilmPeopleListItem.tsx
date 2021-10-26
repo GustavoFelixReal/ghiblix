@@ -1,5 +1,4 @@
 import { Person } from '../../types/film';
-import Character from './Character';
 import { StyledFilmPeopleListItem } from './styled';
 
 interface FilmPeopleListItemProps {

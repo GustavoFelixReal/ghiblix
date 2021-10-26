@@ -1,30 +1,28 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/dist/client/router';
-import { SideBarActiveContext } from './sidebar/SideBar';
+import { SideBarActiveContext } from './SideBar';
 
 import Icon from '@mdi/react';
 import Link from 'next/link';
-import { StyledNavItem } from './styled';
-import Tooltip from '../common/hovers/Tooltip';
+import { StyledSideBarItem } from '../styled';
+import Tooltip from '../../common/hovers/Tooltip';
 
-interface NavItemProps {
+interface SideBarItemProps {
   fullIcon: string;
   label: string;
   outlineIcon: string;
   path: string;
   size: number;
-
-  onClick?: (args?: any) => void;
 }
 
-export default function NavItem({ path, label, outlineIcon, fullIcon, size, onClick }: NavItemProps) {
+export default function SideBarItem({ path, label, outlineIcon, fullIcon, size }: SideBarItemProps) {
   const { asPath } = useRouter();
 
   const isListItemActive = asPath.split('?').shift() === path;
   const isSideBarActive = useContext(SideBarActiveContext);
 
   return (
-    <StyledNavItem onClick={onClick} className={`${isSideBarActive && 'side-bar-active'}`}>
+    <StyledSideBarItem className={`${isSideBarActive && 'side-bar-active'}`}>
       <Link href={path}>
         <a className={`${isListItemActive && 'active'}`}>
           <Icon path={isListItemActive ? fullIcon : outlineIcon} size={size} />
@@ -33,6 +31,6 @@ export default function NavItem({ path, label, outlineIcon, fullIcon, size, onCl
       </Link>
 
       <Tooltip>{label}</Tooltip>
-    </StyledNavItem>
+    </StyledSideBarItem>
   );
 }

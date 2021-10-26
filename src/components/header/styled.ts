@@ -12,24 +12,24 @@ export const HeaderContainer = styled.header<Styles>`
     display: flex;
     justify-content: space-between;
   }
+`;
 
-  nav {
-    display: none;
-    width: 100%;
+export const NavbarContainer = styled.nav`
+  display: none;
+  width: 100%;
 
-    @media (max-width: 768px) {
-      display: flex;
-      justify-content: end;
-    }
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: end;
+  }
 
-    button {
-      width: fit-content;
-      margin: 5px;
-    }
+  button {
+    width: fit-content;
+    margin: 5px;
   }
 `;
 
-export const SideBarContainer = styled.div<Styles>`
+export const SideBarContainer = styled.aside<Styles>`
   background-color: ${(props) => props.theme.mainBackground};
   box-shadow: 0 3px 10px -4px rgba(51, 62, 73, 0.18), 0 6px 17px 2px rgba(51, 62, 73, 0.08);
   display: none;
@@ -86,7 +86,7 @@ export const SideBarListContainer = styled.ul`
   margin-top: 20px;
 `;
 
-export const StyledNavItem = styled.li<Styles>`
+export const StyledSideBarItem = styled.li<Styles>`
   list-style: none;
   margin: 8px 0;
   position: relative;

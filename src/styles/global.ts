@@ -10,11 +10,11 @@ export const GlobalStyles = createGlobalStyle<Styles>`
 
   html { 
     @media (max-width: 1080px) {
-      font-size: 93.75;
+      font-size: 93.75%;
     }
     
     @media (max-width: 720px) {
-      font-size: 87.5;
+      font-size: 87.5%;
     }
   }
 
@@ -56,5 +56,18 @@ export const GlobalStyles = createGlobalStyle<Styles>`
 
   .container {
     padding: 1.5rem;
+  }
+
+  .toast-background {
+    background-color: ${(props) => props.theme.complementaryBackground};
+    color: ${(props) => props.theme.text};
+  }
+
+  #nprogress {
+    .bar {
+      background: ${(props) => props.theme.primary} !important;
+      height: 3px !important;
+      z-index: 999999;
+    }
   }
 `;

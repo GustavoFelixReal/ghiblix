@@ -166,6 +166,14 @@ export const FilmListContainer = styled.section`
     vertical-align: middle;
     width: 100%;
 
+    svg {
+      width: 15%;
+
+      @media screen and (max-width: 768px) {
+        width: 35%;
+      }
+    }
+
     button {
       margin-top: 10px;
       width: fit-content;
@@ -316,5 +324,5 @@ export const StyledFilmListItem = styled.div<StyledFilmListItemProps>`
 `;
 
 export const StyledCharacter = styled.svg<Styles>`
-  fill: ${(props) => props.theme.primary.background} !important;
+  fill: ${(props) => props.theme.text} !important;
 `;

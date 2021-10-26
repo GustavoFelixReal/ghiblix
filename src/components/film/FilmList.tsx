@@ -4,6 +4,7 @@ import { Film } from '../../types/film';
 import Button from '../common/buttons/Button';
 import { FilmListContainer } from './styled';
 import FilmListItem from './FilmListItem';
+import Character from './Character';
 
 interface FilmListProps {
   films: Film[];
@@ -22,8 +23,9 @@ export default function FilmList({ films }: FilmListProps) {
         </>
       ) : (
         <div className="no-film-message">
-          <h1>Não há filme para exibir aqui! 😥</h1>
-          <h3>Volte mais tarde! 😉</h3>
+          <Character />
+          <h1>Não há filmes para exibir aqui!</h1>
+          <h3>Volte mais tarde.</h3>
           {router.asPath !== '/' && (
             <Button variant="primary" onClick={() => router.push('/')}>
               Início

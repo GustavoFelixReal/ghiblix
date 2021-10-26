@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { Film } from '../types/film';
 
+import { toast } from 'react-toastify';
 interface FavoritesProviderProps {
   children: ReactNode;
 }
@@ -23,7 +24,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       setFavorites(JSON.parse(newFavorites) || []);
     } catch {
       setFavorites([]);
-      console.error('Não foi possível carregar os favoritos!');
+      toast.error('Não foi possível carregar os favoritos!');
     }
   }, []);
 
@@ -32,7 +33,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       const foundFavorite = favorites.find((currentFavorite) => currentFavorite.id === favorite.id);
 
       if (foundFavorite) {
-        throw new Error('Item já está salvo nos favoritos');
+        toast.error(`"${favorite.title}" já está salvo nos favoritos`);
       }
 
       const newFavorites = [...favorites, favorite];
@@ -40,8 +41,10 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       setFavorites([...newFavorites]);
 
       localStorage.setItem('favorites', JSON.stringify(newFavorites));
+
+      toast.success(`"${favorite.title}" foi adicionado aos favoritos!`);
     } catch {
-      console.error(`houve um erro ao adicionar "${favorite.title}" aos favoritos.`);
+      toast.error(`Houve um erro ao adicionar "${favorite.title}" aos favoritos.`);
     }
   }
 
@@ -51,7 +54,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       const index = newFavorites.findIndex((currentFavorite) => currentFavorite.id === favorite.id);
 
       if (index < 0) {
-        throw new Error('Este item não pode ser retirado dos favoritos pois o mesmo não exite');
+        toast.error('Este item não pode ser retirado dos favoritos');
       }
 
       newFavorites.splice(index, 1);
@@ -59,8 +62,9 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       setFavorites([...newFavorites]);
 
       localStorage.setItem('favorites', JSON.stringify(newFavorites));
+      toast.success(`"${favorite.title}" foi removido dos favoritos!`);
     } catch {
-      console.error(`houve um erro ao remover "${favorite.title}" dos favoritos.`);
+      toast.error(`Houve um erro ao remover "${favorite.title}" dos favoritos.`);
     }
   }
 

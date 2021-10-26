@@ -22,7 +22,6 @@ export default function FilmProperties({ film, people }: FilmProps) {
 
       <FilmDetails film={film} />
 
-      
       <FilmPeopleList people={people} />
 
       <div className="film-banner" />
