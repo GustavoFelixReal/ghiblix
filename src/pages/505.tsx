@@ -1,20 +1,7 @@
-import { useRouter } from 'next/router';
+import ErrorMessage from '../components/common/errors/ErrorMessage';
 
-import Button from '../components/common/buttons/Button';
-import Character from '../components/film/Character';
-import { ErrorContainer } from '../styles/pages';
-
-export default function Error() {
-  const router = useRouter();
-
+export default function ServerError() {
   return (
-    <ErrorContainer>
-      <Character />
-      <h1>Oops!</h1>
-      <h3>Estamos com problemas técnicos.</h3>
-      <Button variant="primary" onClick={() => router.push('/')}>
-        Início
-      </Button>
-    </ErrorContainer>
+    <ErrorMessage title="Oops!" message="Estamos com problemas técnicos." redirectTo="/" redirectButtonText="Início" />
   );
 }

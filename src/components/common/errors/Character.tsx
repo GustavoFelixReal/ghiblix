@@ -1,4 +1,4 @@
-import { StyledCharacter } from './styled';
+import { StyledCharacter } from '../../film/styled';
 
 export default function Character() {
   return (

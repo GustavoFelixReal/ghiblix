@@ -1,10 +1,9 @@
 import { useRouter } from 'next/dist/client/router';
 import { Film } from '../../types/film';
 
-import Button from '../common/buttons/Button';
+import ErrorMessage from '../common/errors/ErrorMessage';
 import { FilmListContainer } from './styled';
 import FilmListItem from './FilmListItem';
-import Character from './Character';
 
 interface FilmListProps {
   films: Film[];
@@ -22,16 +21,13 @@ export default function FilmList({ films }: FilmListProps) {
           ))}
         </>
       ) : (
-        <div className="no-film-message">
-          <Character />
-          <h1>Não há filmes para exibir aqui!</h1>
-          <h3>Volte mais tarde.</h3>
-          {router.asPath !== '/' && (
-            <Button variant="primary" onClick={() => router.push('/')}>
-              Início
-            </Button>
-          )}
-        </div>
+        <ErrorMessage
+          title="Não há filmes para exibir aqui!"
+          message="Volte mais tarde."
+          redirectTo="/"
+          redirectButtonText="Início"
+          showRedirect={router.asPath !== '/'}
+        />
       )}
     </FilmListContainer>
   );
