@@ -23,11 +23,17 @@ O projeto Ghiblix utiliza as [APIs](https://ghibliapi.herokuapp.com/) do Studio 
 O layout básico da aplicação é gerada no arquivo `_app.tsx`, onde os seguintes componentes são encontrados:
    
 `<CustomThemeProvider>`: Provider do hook de temas, que controla os temas **claro** e **escuro**;
+
 `<FavoritesProvider>`: Provider do hook de favoritos, que realiza a leitura dos filmes armazenados no localStorage;
+
 `<Header>`: Cabeçalho da aplicação;
+
 `<Main>`: Container principal da aplicação;
+
 `<Component>`: O componente da página à ser carregada;
+
 `<Footer>`: Rodapé da aplicação;
+
 `<GlobalStyles>`: Estilos globais da aplicação.   
 
 #### index.tsx
@@ -86,13 +92,16 @@ Gerencia o sistema de temas da aplicação, indicando o uso dos temas **escuro**
 Este hook fornece os valores:
 
  `theme:string` : Tema atual (dark | light);
+ 
  `createTheme:(theme:'dark'|'light') => void`: Recebe uma string e realiza a troca do tema.
 
 #### useFavorites
 Armazena, recupera e gerencia os favoritos que são armazenados no localStorage. Este hook fornece os valores: 
 
 `favorites: Film[]`: Armazena um array de filmes favoritados pelo usuário; 
+
 `createFavorite(favorite: Film)`: Recebe um valor do tipo Film e armazena no localStorage;
+
 `destroyFavorite(favorite: Film)`: Recebe um valor do tipo Film e o retira do localStorage;
 
 #### Estilos e Componentização
