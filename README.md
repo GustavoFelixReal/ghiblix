@@ -104,7 +104,7 @@ Armazena, recupera e gerencia os favoritos que são armazenados no localStorage.
 
 `destroyFavorite(favorite: Film)`: Recebe um valor do tipo Film e o retira do localStorage;
 
-#### Estilos e Componentização
+### Estilos e Componentização
 Os componentes foram construídos para serem reutilizados em diversas partes do projeto. Eles foram separados por categorias: 
 
 **common**: Componentes comuns que não possuem um contexto de uso específico. Ex: botões, etc.;
