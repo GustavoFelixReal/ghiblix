@@ -12,8 +12,6 @@ interface FilmProps {
 }
 
 export default function FilmProperties({ film, people }: FilmProps) {
-  console.log(film, people);
-
   return (
     <FilmContainer banner={film.movie_banner}>
       <Head>
